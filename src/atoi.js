@@ -1,4 +1,4 @@
-const MAX_SIGNED_INTEGER = 2147483648;
+const MAX_SIGNED_INTEGER = 2147483647;
 
 function notANumber(currentChar) {
     return currentChar < '0' || currentChar > '9';
@@ -56,7 +56,7 @@ module.exports = function (value)
         hasAResult = true;
 
         if (total >= MAX_SIGNED_INTEGER) {
-            total = (MAX_SIGNED_INTEGER - (!isSign ? 1 : 0));
+            total = (MAX_SIGNED_INTEGER + isSign);
             break;
         }
     }
