@@ -1,14 +1,20 @@
+const MAX_INT32 = 2147483647;
+
+function isNegativeNumber(number) {
+    return number < 0;
+
+}
+
 module.exports = function (number)
 {
-    let isNegative = false;
-    if (number < 0) {
-        isNegative = true;
-    }
-    number = Math.abs(number);
+    let isNegative = isNegativeNumber(number);
+
+    number = isNegative ? (-1 * number) : number;
     let result = number % 10;
+
     while ((number = Math.floor(number / 10))) {
         result = (result * 10) + number % 10;
-        if (result > 2147483647) {
+        if (result > MAX_INT32) {
             return 0;
         }
     }
