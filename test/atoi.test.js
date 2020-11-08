@@ -51,6 +51,7 @@ describe('atoi', () =>
     {
         expect(atoi('-91283472332')).to.equals(-2147483648);
         expect(atoi('-2147483649')).to.equals(-2147483648);
+        expect(atoi('-2147483647')).to.equals(-2147483647);
     });
 
     it('should return 2147483647 when the number exceed INT32', async () =>

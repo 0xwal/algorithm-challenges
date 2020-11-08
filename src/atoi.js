@@ -20,7 +20,7 @@ function addDigit(result, currentCharCode) {
 module.exports = function (value)
 {
     let total = 0;
-    let hasAResult = false;
+    let hasResult = false;
     let amISeriousAboutTheValidNumbers = false;
 
 
@@ -42,20 +42,20 @@ module.exports = function (value)
 
         amISeriousAboutTheValidNumbers = true;
 
-        if (!hasAResult && notANumber(currentChar)) {
+        if (!hasResult && notANumber(currentChar)) {
             return 0;
         }
 
-        if (hasAResult && notANumber(currentChar)) {
+        if (hasResult && notANumber(currentChar)) {
             break;
         }
 
         const currentCharCode = currentChar - '0';
         total = addDigit(total, currentCharCode);
 
-        hasAResult = true;
+        hasResult = true;
 
-        if (total >= MAX_SIGNED_INTEGER) {
+        if (total > MAX_SIGNED_INTEGER) {
             total = (MAX_SIGNED_INTEGER + isSign);
             break;
         }
