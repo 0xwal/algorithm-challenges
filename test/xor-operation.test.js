@@ -15,4 +15,14 @@ describe('xorOperation', () =>
     {
         expect(xorOperation(1, 7)).to.equals(7);
     });
+
+    it('should return #2', async () =>
+    {
+        expect(xorOperation(10, 5)).to.equals(2);
+    });
+
+    it('should return #6', async () =>
+    {
+        expect(xorOperation(3, 0)).to.equals(6);
+    });
 });
