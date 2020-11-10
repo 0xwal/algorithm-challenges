@@ -22,7 +22,7 @@ describe('reverseWords', () =>
 
     it('should remove any extra spaces and keep only one space between the words', async () =>
     {
-        // expect(reverseWords('Hello     World')).to.equals('World Hello');
+        expect(reverseWords('Hello     World')).to.equals('World Hello');
         expect(reverseWords('Hello     World      Now')).to.equals('Now World Hello');
     });
 
