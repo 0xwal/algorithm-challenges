@@ -1,8 +1,8 @@
 module.exports = function (numbers)
 {
-    let n_result = 0;
+    let result = 0;
     for (const number of numbers) {
-        n_result ^= number;
+        result ^= number;
     }
-    return n_result;
+    return result;
 }
