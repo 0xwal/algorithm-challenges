@@ -10,13 +10,13 @@ describe('removeElement', () =>
     {
         let nums = [3, 2, 2, 3];
         expect(removeElement(nums, 3)).to.equals(2);
-        expect(nums).to.deep.equals([2, 2]);
+        expect(nums).to.have.members([2, 2]);
     });
 
     it('should remove given element and without changing the reference', async () =>
     {
         const nums = [0, 1, 2, 2, 3, 0, 4, 2];
         expect(removeElement(nums, 2)).to.equals(5);
-        expect(nums).to.deep.equals([0, 1, 3, 0, 4]);
+        expect(nums).to.have.members([0, 1, 3, 0, 4]);
     });
 });
