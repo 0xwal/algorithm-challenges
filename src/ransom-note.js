@@ -1,21 +1,15 @@
 module.exports = function (ransomNote, magazine)
 {
-    const ransomNoteObject = {};
-    const magazineObject = {};
+    const magazineArray = magazine.split('');
+    let foundCount = 0;
 
-    for (const ransomNoteElement of ransomNote) {
-        ransomNoteObject[ransomNoteElement] = (ransomNoteObject[ransomNoteElement] + 1 || 1);
-    }
+    for (let i = 0; i < ransomNote.length; i++) {
+        let index = magazineArray.indexOf(ransomNote[i]);
 
-    for (const magazineElement of magazine) {
-        magazineObject[magazineElement] = (magazineObject[magazineElement] + 1 || 1);
-    }
-
-    for (const key in ransomNoteObject) {
-        if (!magazineObject[key] || magazineObject[key] < ransomNoteObject[key]) {
-            return false;
+        if (index !== -1) {
+            foundCount++;
+            magazineArray.splice(index, 1);
         }
     }
-
-    return true;
+    return foundCount === ransomNote.length;
 }
